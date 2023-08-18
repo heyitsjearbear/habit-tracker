@@ -3,7 +3,7 @@ const Model = require("../model/model");
 
 const createHabit = async (req, res) => {
   const data = new Model({
-    name: req.body.name,
+    habit: req.body.habit,
     date: req.body.date,
     completed: req.body.completed,
   });
@@ -51,7 +51,7 @@ const deleteHabit = async (req, res) => {
   try {
     const id = req.params.id;
     const data = await Model.findByIdAndDelete(id);
-    res.send(`Document with "${data.name}" has been deleted...`);
+    res.send(`Document with "${data.habit}" has been deleted...`);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }

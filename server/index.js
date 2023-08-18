@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes/routes");
 const bodyParser = require("body-parser");
+const cors = require('cors');
 require("dotenv").config();
 const mongoString = process.env.DATABASE_URL;
 
@@ -15,6 +16,7 @@ database.once("connected", () => {
 });
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/api", routes);

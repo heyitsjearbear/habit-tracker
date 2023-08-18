@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const habitSchema = new mongoose.Schema({
-    name : {
+    habit : {
         required: true,
         type: String
     },
