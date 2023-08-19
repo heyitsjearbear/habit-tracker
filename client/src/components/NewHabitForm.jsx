@@ -8,47 +8,29 @@ const NewHabitForm = () => {
   const submitHabit = async (e) => {
     e.preventDefault();
     // console.log(`Date: ${date}, habit: ${habit}, completed: ${completed}`)
-    try{
+    try {
       let newData = await fetch("http://localhost:3000/api/post", {
-      method: "post",
-      body: JSON.stringify({ habit, date, completed }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+        method: "post",
+        body: JSON.stringify({ habit, date, completed }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-    const json = await newData.json();
-
-    alert("data submitted to database successfully");
-      //reset fields
-      setHabit("");
-      setDate("");
-      setCompletedBox(false);
-      checkBoxRef.current[0].checked = false;
+      //const json = await newData.json();
+      if (newData.ok) {
+        alert("data submitted to database successfully");
+        //reset fields
+        setHabit("");
+        setDate("");
+        setCompletedBox(false);
+        checkBoxRef.current[0].checked = false;
+      } else {
+        throw new Error(JSON.stringify({code: newData.status, message: newData.statusText}))
+      }
+    } catch(error) {
+      alert(error);
     }
-    catch (error){
-      console.log(error);
-    }
-    // let newData = await fetch("http://localhost:3000/api/post", {
-    //   method: "post",
-    //   body: JSON.stringify({ habit, date, completed }),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // });
-
-    // const json = await newData.json();
-    // if (json.ok) {
-    //   alert("data submitted to database successfully");
-    //   //reset fields
-    //   setHabit("");
-    //   setDate("");
-    //   setCompletedBox(false);
-    //   checkBoxRef.current[0].checked = false;
-    // } 
-    // else {
-    //   console.log(Promise.reject(json))
-    // }
   };
   return (
     <>
