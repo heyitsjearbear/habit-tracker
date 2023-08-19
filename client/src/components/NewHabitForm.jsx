@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-const NewHabitForm = () => {
+const NewHabitForm = ({ editHabits, habitsList }) => {
   const [habit, setHabit] = useState("");
   const [date, setDate] = useState("");
   const [completed, setCompletedBox] = useState(false);
@@ -17,7 +17,7 @@ const NewHabitForm = () => {
         },
       });
 
-      //const json = await newData.json();
+      const json = await newData.json();
       if (newData.ok) {
         alert("data submitted to database successfully");
         //reset fields
@@ -25,10 +25,18 @@ const NewHabitForm = () => {
         setDate("");
         setCompletedBox(false);
         checkBoxRef.current[0].checked = false;
+        //update locally here
+        editHabits((lastList) => {
+          return[...lastList,json]
+        });
+        console.log(json);
+        console.log(habitsList)
       } else {
-        throw new Error(JSON.stringify({code: newData.status, message: newData.statusText}))
+        throw new Error(
+          JSON.stringify({ code: newData.status, message: newData.statusText })
+        );
       }
-    } catch(error) {
+    } catch (error) {
       alert(error);
     }
   };

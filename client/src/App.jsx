@@ -17,7 +17,7 @@ const App = () => {
 
   return (
     <>
-      <NewHabitForm />
+      <NewHabitForm habitsList={habits} editHabits={setHabits} />
       <div className="habits">
         {habits && habits.map((habitEntry) => (
           <HabitDetails key={habitEntry._id} habit = {habitEntry} />
