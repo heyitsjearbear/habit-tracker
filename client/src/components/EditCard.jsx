@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import { useState, useRef } from "react";
-const EditCard = ({ habitDeets,myKey,editHabits, editClicked, changeEditClicked }) => {
+const EditCard = ({ habitDeets,myKey,editHabits, changeEditClicked }) => {
   const [habit, setHabit] = useState(habitDeets.habit);
   const [date, setDate] = useState(habitDeets.date);
   const [completed, setCompletedBox] = useState(habitDeets.completed);

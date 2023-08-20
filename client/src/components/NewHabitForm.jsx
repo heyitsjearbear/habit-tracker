@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useRef, useState } from "react";
 
 const NewHabitForm = ({ editHabits, habitsList }) => {

@@ -12,7 +12,6 @@ const HabitCard = ({ habitDeets, editHabits, myKey }) => {
         <EditCard
           myKey={myKey}
           editHabits={editHabits}
-          editClicked={isEditBtClicked}
           changeEditClicked={ChangeEditBtnClick}
           habitDeets = {habitDeets}
         />
