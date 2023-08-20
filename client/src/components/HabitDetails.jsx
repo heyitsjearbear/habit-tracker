@@ -31,14 +31,14 @@ const HabitDetails = ({
     <>
       <div className="habit-details">
         <h4>{habit.habit}</h4>
-        <p>
+        <div>
           <strong>Date: </strong>
           {habit.date}
-        </p>
-        <p>
+        </div>
+        <div>
           <strong>Completed: </strong>
           {habit.completed ? <p>☑️</p> : <p>❌</p>}
-        </p>
+        </div>
       </div>
       <button onClick={editHandler}>Edit habit</button>
       <button onClick={deleteHandler}>Delete habit</button>
