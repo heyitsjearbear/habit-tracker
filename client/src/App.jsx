@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import NewHabitForm from "./components/NewHabitForm";
-import HabitDetails from "./components/HabitDetails";
+import HabitCard from "./components/HabitCard";
 const App = () => {
   const [habits, setHabits] = useState(null);
   //fetch habits from database
@@ -21,9 +21,10 @@ const App = () => {
       <div className="habits">
         {habits &&
           habits.map((habitEntry) => (
-            <HabitDetails
+            <HabitCard
               key={habitEntry._id}
-              habit={habitEntry}
+              myKey = {habitEntry._id}
+              habitDeets={habitEntry}
               editHabits={setHabits}
             />
           ))}
