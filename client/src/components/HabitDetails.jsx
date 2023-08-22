@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import "./HabitDetails.css";
 const HabitDetails = ({
   habit,
   editHabits,
@@ -39,9 +40,9 @@ const HabitDetails = ({
           <strong>Completed: </strong>
           {habit.completed ? <p>☑️</p> : <p>❌</p>}
         </div>
+        <button onClick={editHandler}>Edit habit</button>
+        <button onClick={deleteHandler}>Delete habit</button>
       </div>
-      <button onClick={editHandler}>Edit habit</button>
-      <button onClick={deleteHandler}>Delete habit</button>
     </>
   );
 };

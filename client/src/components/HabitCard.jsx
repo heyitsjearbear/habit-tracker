@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line react/prop-types
-
 import { useState } from "react";
 import HabitDetails from "./HabitDetails";
 import EditCard from "./EditCard";
