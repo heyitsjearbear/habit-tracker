@@ -48,7 +48,7 @@ const EditCard = ({ habitDeets,myKey,editHabits, changeEditClicked }) => {
   };
   return (
     <>
-      <form action="">
+      <form className="row" action="">
         <input
           type="text"
           value={habit}

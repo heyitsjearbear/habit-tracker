@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import "./HabitDetails.css";
 const HabitDetails = ({
   habit,
   editHabits,
@@ -30,7 +29,7 @@ const HabitDetails = ({
   };
   return (
     <>
-      <div className="habit-details">
+      <div className="row card">
         <h4>{habit.habit}</h4>
         <div>
           <strong>Date: </strong>

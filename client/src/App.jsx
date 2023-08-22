@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import NewHabitForm from "./components/NewHabitForm";
 import HabitCard from "./components/HabitCard";
-import './App.css'
+import "./App.css";
 const App = () => {
   const [habits, setHabits] = useState(null);
   //fetch habits from database
@@ -18,18 +18,21 @@ const App = () => {
 
   return (
     <>
-    <h1>Productibity Tracker</h1>
-      <NewHabitForm habitsList={habits} editHabits={setHabits} />
-      <div className="habits">
-        {habits &&
-          habits.map((habitEntry) => (
-            <HabitCard className = "habit-card"
-              key={habitEntry._id}
-              myKey = {habitEntry._id}
-              habitDeets={habitEntry}
-              editHabits={setHabits}
-            />
-          ))}
+      <h1>Productibity Tracker</h1>
+      <div className="main">
+        <div className="habits">
+          {habits &&
+            habits.map((habitEntry) => (
+              <HabitCard
+                className="habit-card"
+                key={habitEntry._id}
+                myKey={habitEntry._id}
+                habitDeets={habitEntry}
+                editHabits={setHabits}
+              />
+            ))}
+        </div>
+        <NewHabitForm habitsList={habits} editHabits={setHabits} />
       </div>
     </>
   );

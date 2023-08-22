@@ -15,7 +15,7 @@ const HabitCard = ({ habitDeets, editHabits, myKey }) => {
           habitDeets = {habitDeets}
         />
       ) : (
-        <HabitDetails
+        <HabitDetails className="habit-details"
           habit={habitDeets}
           editHabits={editHabits}
           isEditBtClicked={isEditBtClicked}
