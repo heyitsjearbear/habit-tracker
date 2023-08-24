@@ -28,7 +28,7 @@ const EditCard = ({ habitDeets,myKey,editHabits, changeEditClicked }) => {
       console.log(updatedData)
       const json = await updatedData.json();
       if (updatedData.ok) {
-        alert("habit edited successfully");
+        // alert("habit edited successfully");
         //update locally here
         editHabits((lastList) => {
           return [...lastList, json];
@@ -48,7 +48,7 @@ const EditCard = ({ habitDeets,myKey,editHabits, changeEditClicked }) => {
   };
   return (
     <>
-      <form className="row" action="">
+      <form className="row card" action="">
         <input
           type="text"
           value={habit}

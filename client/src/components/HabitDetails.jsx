@@ -30,10 +30,12 @@ const HabitDetails = ({
   return (
     <>
       <div className="row card">
-        <h4>{habit.habit}</h4>
-        <div>
-          <strong>Date: </strong>
-          {habit.date}
+        <div className="card-title">
+          <h4>{habit.habit}</h4>
+          <div>
+            <strong>Date: </strong>
+            {habit.date}
+          </div>
         </div>
         <div>
           <strong>Completed: </strong>

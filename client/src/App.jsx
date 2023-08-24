@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import NewHabitForm from "./components/NewHabitForm";
 import HabitCard from "./components/HabitCard";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+import "../node_modules/animate.css"
 import "./App.css";
 const App = () => {
   const [habits, setHabits] = useState(null);
@@ -21,16 +23,27 @@ const App = () => {
       <h1>Productibity Tracker</h1>
       <div className="main">
         <div className="habits">
-          {habits &&
-            habits.map((habitEntry) => (
-              <HabitCard
-                className="habit-card"
-                key={habitEntry._id}
-                myKey={habitEntry._id}
-                habitDeets={habitEntry}
-                editHabits={setHabits}
-              />
-            ))}
+          <TransitionGroup>
+            {habits &&
+              habits.map((habitEntry) => (
+                <CSSTransition
+                  key={habitEntry._id}
+                  classNames={{
+                    enterActive: "animate__animated animate__lightSpeedInLeft",
+                    exitActive: "animate__animated animate__lightSpeedOutLeft",
+                  }}
+                  timeout={900}
+                >
+                  <HabitCard
+                    className="habit-card"
+                    key={habitEntry._id}
+                    myKey={habitEntry._id}
+                    habitDeets={habitEntry}
+                    editHabits={setHabits}
+                  />
+                </CSSTransition>
+              ))}
+          </TransitionGroup>
         </div>
         <NewHabitForm habitsList={habits} editHabits={setHabits} />
       </div>

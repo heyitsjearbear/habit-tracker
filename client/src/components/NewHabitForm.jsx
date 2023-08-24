@@ -20,7 +20,7 @@ const NewHabitForm = ({ editHabits, habitsList }) => {
 
       const json = await newData.json();
       if (newData.ok) {
-        alert("data submitted to database successfully");
+        // alert("data submitted to database successfully");
         //reset fields
         setHabit("");
         setDate("");
