@@ -37,7 +37,7 @@ const HabitDetails = ({
             {habit.date}
           </div>
         </div>
-        <div>
+        <div className="completed">
           <strong>Completed: </strong>
           {habit.completed ? <p>☑️</p> : <p>❌</p>}
         </div>
