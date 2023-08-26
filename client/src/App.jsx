@@ -2,8 +2,13 @@ import { useEffect, useState } from "react";
 import NewHabitForm from "./components/NewHabitForm";
 import HabitCard from "./components/HabitCard";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import Chart from "chart.js/auto";
+import { CategoryScale } from "chart.js";
 import "../node_modules/animate.css"
 import "./App.css";
+import "./components/HabitChart"
+import HabitChart from "./components/HabitChart";
+Chart.register(CategoryScale)
 const App = () => {
   const [habits, setHabits] = useState(null);
   //fetch habits from database
@@ -47,6 +52,7 @@ const App = () => {
         </div>
         <NewHabitForm habitsList={habits} editHabits={setHabits} />
       </div>
+      < HabitChart />
     </>
   );
 };
