@@ -52,7 +52,7 @@ const App = () => {
         </div>
         <NewHabitForm habitsList={habits} editHabits={setHabits} />
       </div>
-      < HabitChart />
+      < HabitChart  />
     </>
   );
 };

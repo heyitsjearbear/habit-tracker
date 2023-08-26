@@ -12,12 +12,14 @@ const HabitChart = () => {
               data: [5, 4, 7, 6, 4, 3],
               fill: true,
               borderWidth: 4,
-              backgroundColor: "rgb(255, 99, 132)",
-              borderColor: "green",
+              backgroundColor: "green",
+              borderColor: "red",
               responsive: true,
             },
           ],
         }}
+        isResponsive = 'true'
+        options={{ maintainAspectRatio: false, responsive:true }}
       />
     </div>
   );

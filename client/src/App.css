@@ -58,5 +58,12 @@ h4 {
     display: flex;
     justify-content: space-between;
 }
+.chart-container {
+  margin: 0 auto;
+  background-color: white;
+  position:relative;
+  height: 40vh;
+  width: 50vw;
+}
 
 
