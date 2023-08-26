@@ -6,7 +6,7 @@ import EditCard from "./EditCard";
 const HabitCard = ({ habitDeets, editHabits, myKey }) => {
   const [isEditBtClicked, ChangeEditBtnClick] = useState(false);
   return (
-    <div>
+    <div className="entry">
       {isEditBtClicked ? (
         <EditCard
           myKey={myKey}

@@ -28,7 +28,7 @@ const App = () => {
       <h1>Productibity Tracker</h1>
       <div className="main">
         <div className="habits">
-          <TransitionGroup>
+          <TransitionGroup className="css-transition">
             {habits &&
               habits.map((habitEntry) => (
                 <CSSTransition
