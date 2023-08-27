@@ -18,6 +18,7 @@ const App = () => {
       const json = await response.json();
       if (response.ok) {
         setHabits(json);
+        console.log(json);
       }
     };
     fetchHabits();
