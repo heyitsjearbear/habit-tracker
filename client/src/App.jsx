@@ -13,12 +13,18 @@ const App = () => {
   const [habits, setHabits] = useState(null);
   //fetch habits from database
   useEffect(() => {
+    let habitDates = new Array();
     const fetchHabits = async () => {
       const response = await fetch("http://localhost:3000/api/getAll");
       const json = await response.json();
       if (response.ok) {
         setHabits(json);
-        console.log(json);
+        for(let i = 0; i<json.length; i++)
+        {
+          habitDates.push(json[i].date)
+        }
+        //TODO transfer dates all the way down to chart component (useState() ? )
+        console.log(habitDates);
       }
     };
     fetchHabits();
