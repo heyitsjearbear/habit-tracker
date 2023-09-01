@@ -24,7 +24,6 @@ const App = () => {
           habitDates.push(json[i].date)
         }
         //TODO transfer dates all the way down to chart component (useState() ? )
-        console.log(habitDates);
       }
     };
     fetchHabits();
@@ -59,7 +58,10 @@ const App = () => {
         </div>
         <NewHabitForm habitsList={habits} editHabits={setHabits} />
       </div>
-      < HabitChart  />
+      {/* < HabitChart  /> */}
+      {habits && (
+        < HabitChart habitDates={habits} />
+      )}
     </>
   );
 };
