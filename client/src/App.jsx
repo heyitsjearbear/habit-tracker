@@ -60,7 +60,7 @@ const App = () => {
       </div>
       {/* < HabitChart  /> */}
       {habits && (
-        < HabitChart habitDates={habits} />
+        < HabitChart habits={habits} />
       )}
     </>
   );
