@@ -23,7 +23,6 @@ const App = () => {
         {
           habitDates.push(json[i].date)
         }
-        //TODO transfer dates all the way down to chart component (useState() ? )
       }
     };
     fetchHabits();
