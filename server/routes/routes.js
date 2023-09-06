@@ -7,6 +7,9 @@ const {deleteHabit,
   getHabit,
   getHabits,} = require("../controllers/habitController")
 
+const {createUser} = require("../controllers/userController")
+
+// routes for habits
 router.post("/post", createHabit);
 
 router.get("/getAll", getHabits);
@@ -16,5 +19,8 @@ router.get("/getOne/:id", getHabit);
 router.patch("/update/:id", updateHabit);
 
 router.delete("/delete/:id", deleteHabit);
+
+//routes for users
+router.post("/register", createUser);
 
 module.exports = router;
