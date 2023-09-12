@@ -1,6 +1,6 @@
 const express = require("express");
+const auth = require("../auth")
 const router = express.Router();
-const Model = require("../model/model");
 const {deleteHabit,
   updateHabit,
   createHabit,
@@ -23,6 +23,16 @@ router.delete("/delete/:id", deleteHabit);
 //routes for users
 router.post("/register", createUser);
 
-router.post("/login", loginUser)
+router.post("/login", loginUser);
+
+// free endpoint
+router.get("/free-endpoint", (req, res) => {
+  res.json({ message: "You are free to access me anytime" });
+});
+
+// authentication endpoint
+router.get("/auth-endpoint", auth, (req, res) => {
+  res.json({ message: "You are authorized to access me" });
+});
 
 module.exports = router;
